@@ -1,13 +1,12 @@
 package pages;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class ManageDeliveryBoyPage 
@@ -32,7 +31,7 @@ public class ManageDeliveryBoyPage
 	@FindBy(xpath = "//textarea[@id='address']") WebElement deliveryBoyAddressField;
 	@FindBy(xpath = "//input[@id='username']") WebElement deliveryBoyUserNameField;
 	@FindBy(xpath = "//input[@id='password']")WebElement deliveryBoyPasswordField;
-	@FindBy(xpath = "//button[text()='Save']") WebElement saveButton;
+	@FindBy(xpath = "//button[@name='create']") WebElement saveButton;
 	@FindBy(xpath = "//i[contains(@class,'icon fas fa-check')]//parent::h5") WebElement alertMessage;
 	
 	public String navigateToManageDeliveryBoyPage()
@@ -90,8 +89,11 @@ public class ManageDeliveryBoyPage
 	}
 	public void clickOnSaveButton()
 	{
-		//WaitUtility waitutility = new WaitUtility();
-		//waitutility.waitForElement(driver, saveButton);
+		PageUtility pageutility = new PageUtility();
+		pageutility.javaScriptClick(driver, saveButton);
+		
+		WaitUtility waitutility = new WaitUtility();
+		waitutility.ExplicitWaitForAnElementToBeClickable(driver, saveButton);
 		saveButton.click();
 	}
 	public boolean isNewDeliveryBoyCreatedSuccessfullyAlertDisplayed()

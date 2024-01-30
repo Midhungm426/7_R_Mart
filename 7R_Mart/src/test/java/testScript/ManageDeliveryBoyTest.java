@@ -43,12 +43,12 @@ public class ManageDeliveryBoyTest extends Base
 	{
 		String userName = "admin";
 		String password = "admin";
-		String newDeliveryBoyName= "Anu";
+		String newDeliveryBoyName= "Anuu";
 		String deliveryBoyEmail = "anu@gmail.com";
 		String deliveryBoyPhoneNumber = "7736565717";
 		String deliveryBoyAddress ="ABC House Trivandrum Kerala";
-		String deliveryBoyUserName = "anu@123";
-		String deliveryBoyPassword = "anu@123";
+		String deliveryBoyUserName = "anu@1234";
+		String deliveryBoyPassword = "anu@1234";
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);

@@ -1,11 +1,16 @@
 package pages;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.FileUploadUtility;
+import utilities.GeneralUtility;
+import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageSliderPage 
 {
@@ -32,11 +37,22 @@ public class ManageSliderPage
 	}
 	public void clickOnChooseFileButton()
 	{
-		chooseFileButton.click();
+		PageUtility pageutility = new PageUtility();
+		pageutility.javaScriptClick(driver, chooseFileButton);
+		
+		WaitUtility waitutility = new WaitUtility();
+		waitutility.ExplicitWaitForAnElementToBeClickable(driver, chooseFileButton);
 	}
-	
-	//FileUploadUtility fileuploadutility =new FileUploadUtility();
-	//fileuploadutility.fileUploadUsingRobotClass(chooseFileButton,linkText);
+	public void useSendKeysForFileUpload()
+	{
+		PageUtility pageutility = new PageUtility();
+		pageutility.fileUploadUsingSendKeys(driver, chooseFileButton, GeneralUtility.SLIDER_IMAGE);
+	}
+	public void useRobotClass() throws AWTException
+	{
+		FileUploadUtility fileuploadutility =new FileUploadUtility();
+		fileuploadutility.fileUploadUsingRobotClass(chooseFileButton,GeneralUtility.SLIDER_IMAGE);
+	}
 	
 	public void enterLinkTextOnLinkTextField(String linkText)
 	{

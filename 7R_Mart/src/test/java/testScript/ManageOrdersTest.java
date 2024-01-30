@@ -23,7 +23,7 @@ public class ManageOrdersTest extends Base
 		ManageOrdersPage manageorderspage = new ManageOrdersPage(driver);
 		manageorderspage.clickOnManageOrdersOption();
 		manageorderspage.clickOnDeleteButton();
-		manageorderspage.acceptAlert();
+		
 		boolean isorderdeletedsuccessfully = manageorderspage.isOrderDeletedSuccessfully();
 		assertTrue(isorderdeletedsuccessfully, "Order not deleted");
 		

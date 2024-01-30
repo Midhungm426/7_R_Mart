@@ -1,5 +1,7 @@
 package utilities;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -37,25 +39,52 @@ public class PageUtility
 		Actions actions = new Actions(driver);
 		actions.contextClick(targetItem).build().perform();
 	}
-	public void alertAccept(WebElement alertElement, WebDriver driver)
+	public void acceptAlert(WebDriver driver) 
 	{
-		alertElement.click();
 		driver.switchTo().alert().accept();
 	}
-	public void alertDismiss(WebElement alertElement, WebDriver driver)
+	public void dismissAlert(WebDriver driver)
 	{
-		alertElement.click();
 		driver.switchTo().alert().dismiss();
 	}
+	
 	public void promtAlert (WebElement alertElement,String input, WebDriver driver)
 	{
-		alertElement.click();
 		driver.switchTo().alert().sendKeys(input);
    	  	driver.switchTo().alert().accept();
 	}
 	public void frame(WebElement iframe, WebDriver driver)
 	{
 		driver.switchTo().frame(iframe);
+	}
+	public void javaScriptClick(WebDriver driver,WebElement element) 
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();",element);
+	}
+	public void scrollDownOfaWebPage(WebDriver driver)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+	}
+	public void ScrollIntoViewOfAnElement(WebDriver driver,WebElement element)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",element);
+	}
+	public void verifyScrollToTheBottomOfaWebpage(WebDriver driver)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	}
+	public void HorizontalScrollIntoViewOfAnElement(WebDriver driver,WebElement element)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",element);
+	}
+	public void fileUploadUsingSendKeys(WebDriver driver,WebElement element,String filepath)
+	{
+		element.sendKeys(filepath);
 	}
 }
 

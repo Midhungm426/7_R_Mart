@@ -19,6 +19,7 @@ public class MenuPage
 	}
 	@FindBy(xpath = "//div[contains(@class,'small')]//child::div[@class='inner']") List<WebElement> menuList;
 	@FindBy(xpath = "//a[@class='small-box-footer']") List<WebElement> menuLink;
+	@FindBy(xpath = "//a[@class=\"btn btn-rounded btn-warning\"]") WebElement resetButton;
 	
 	public void clickOnMenu(String selectedMenu)
 	{
@@ -32,5 +33,9 @@ public class MenuPage
 				break;
 			}
 		}
+	}
+	public boolean isSelectedMenuPageDisplayed()
+	{
+		return resetButton.isDisplayed();
 	}
 }

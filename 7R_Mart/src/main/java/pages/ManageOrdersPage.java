@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageOrdersPage 
 {
@@ -27,14 +28,11 @@ public class ManageOrdersPage
 	public void clickOnDeleteButton()
 	{
 		deleteButton.click();
-	}
-	public void acceptAlert()
-	{
-		PageUtility pageutility = new PageUtility();
-		pageutility.alertAccept(deleteButton, driver);
-	}
+	}	
 	public boolean isOrderDeletedSuccessfully()
 	{
+		PageUtility pageutility = new PageUtility();
+		pageutility.acceptAlert(driver);
 		return alertMessage.isDisplayed();
 	}
 }

@@ -1,5 +1,7 @@
 package testScript;
 
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
 import pages.MenuPage;
@@ -22,5 +24,7 @@ public class MenuTest extends Base
 		
 		MenuPage menupage = new MenuPage(driver);
 		menupage.clickOnMenu(selectedMenu);
+		boolean isSelectedMenuPageDisplayed = menupage.isSelectedMenuPageDisplayed();
+		assertTrue(isSelectedMenuPageDisplayed, "The selected menu is not displayed");
 	}
 }
