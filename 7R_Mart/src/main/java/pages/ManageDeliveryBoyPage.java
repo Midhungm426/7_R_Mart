@@ -94,7 +94,8 @@ public class ManageDeliveryBoyPage
 		
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.ExplicitWaitForAnElementToBeClickable(driver, saveButton);
-		saveButton.click();
+		
+		//saveButton.click();
 	}
 	public boolean isNewDeliveryBoyCreatedSuccessfullyAlertDisplayed()
 	{

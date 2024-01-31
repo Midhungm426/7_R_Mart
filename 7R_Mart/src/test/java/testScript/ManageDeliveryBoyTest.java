@@ -2,25 +2,21 @@ package testScript;
 
 import static org.testng.Assert.assertTrue;
 
-import java.time.Duration;
-
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import java.io.IOException;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManageDeliveryBoyPage;
-import utilities.WaitUtility;
+import utilities.ExcelUtility;
 
 public class ManageDeliveryBoyTest extends Base
 {
 	@Test
-	public void verifySearchDeliveryBoyInDeliveryBoyPage()
+	public void verifySearchDeliveryBoyInDeliveryBoyPage() throws IOException
 	{
-		String userName = "admin";
-		String password = "admin";
-		String deliveryBoyName = "Camden Abernathy";
+		String userName = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoy");
+		String password = ExcelUtility.getStringData(1, 1, "ManageDeliveryBoy");
+		String deliveryBoyName = ExcelUtility.getStringData(2, 1, "ManageDeliveryBoy");
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);
@@ -39,16 +35,16 @@ public class ManageDeliveryBoyTest extends Base
 		assertTrue(isdeliveryboysearchresultdisplayed,"Search result not found for"+deliveryBoyName);
 	}
 	@Test
-	public void verifyAddDeliveryBoyInManageDeliveryBoyPage()
+	public void verifyAddDeliveryBoyInManageDeliveryBoyPage() throws IOException
 	{
-		String userName = "admin";
-		String password = "admin";
-		String newDeliveryBoyName= "Anuu";
-		String deliveryBoyEmail = "anu@gmail.com";
-		String deliveryBoyPhoneNumber = "7736565717";
-		String deliveryBoyAddress ="ABC House Trivandrum Kerala";
-		String deliveryBoyUserName = "anu@1234";
-		String deliveryBoyPassword = "anu@1234";
+		String userName = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoy");
+		String password = ExcelUtility.getStringData(1, 1, "ManageDeliveryBoy");
+		String newDeliveryBoyName= ExcelUtility.getStringData(3, 1, "ManageDeliveryBoy");
+		String deliveryBoyEmail = ExcelUtility.getStringData(4, 1, "ManageDeliveryBoy");
+		String deliveryBoyPhoneNumber = ExcelUtility.getIntegerData(5, 1, "ManageDeliveryBoy");
+		String deliveryBoyAddress = ExcelUtility.getStringData(6, 1, "ManageDeliveryBoy");
+		String deliveryBoyUserName = ExcelUtility.getStringData(7, 1, "ManageDeliveryBoy");
+		String deliveryBoyPassword = ExcelUtility.getStringData(8, 1, "ManageDeliveryBoy");
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);

@@ -3,21 +3,23 @@ package testScript;
 import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
+import java.io.IOException;
 
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManageSliderPage;
+import utilities.ExcelUtility;
 import utilities.FileUploadUtility;
 
 public class ManageSliderTest extends Base
 {	
 	@Test
-	public void verifyTheUserIsAbleToAddANewMobileSlider() throws AWTException
+	public void verifyTheUserIsAbleToAddANewMobileSlider() throws AWTException, IOException
 	{
-		String userName = "admin";
-		String password = "admin";
-		String linkText = "https://www.amazon.in";
+		String userName = ExcelUtility.getStringData(0, 1,"ManageSlider" );
+		String password = ExcelUtility.getStringData(1, 1,"ManageSlider" );
+		String linkText = ExcelUtility.getStringData(2, 1,"ManageSlider" );
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);

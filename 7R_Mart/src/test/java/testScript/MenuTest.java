@@ -2,20 +2,23 @@ package testScript;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import pages.MenuPage;
+import utilities.ExcelUtility;
 import pages.LoginPage;
 
 public class MenuTest extends Base
 {
 	@Test
-	public void verifyWhetherTheSelectedMenuTilesAreDisplayed()
+	public void verifyWhetherTheSelectedMenuTilesAreDisplayed() throws IOException
 	
 	{
-		String userName = "admin";
-		String password = "admin";
-		String selectedMenu = "Manage Orders";
+		String userName = ExcelUtility.getStringData(0, 1,"MenuPage" );
+		String password = ExcelUtility.getStringData(1, 1,"MenuPage" );
+		String selectedMenu = ExcelUtility.getStringData(2, 1,"MenuPage" );
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);

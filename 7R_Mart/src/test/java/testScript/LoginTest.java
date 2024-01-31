@@ -2,17 +2,20 @@ package testScript;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
+import utilities.ExcelUtility;
 
 public class LoginTest extends Base
 {
 	@Test(description = "Verify whether theUserIsAbleToLoginWithValidCredentials")
-	public void verifyWhetherTheUserIsAbleToLoginWithValidCredentials()
+	public void verifyWhetherTheUserIsAbleToLoginWithValidCredentials() throws IOException
 	{
-		String userName = "admin";
-		String password = "admin";
+		String userName = ExcelUtility.getStringData(1, 0,"LoginPage" );
+		String password = ExcelUtility.getStringData(1, 1,"LoginPage" );
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -21,10 +24,10 @@ public class LoginTest extends Base
 		assertTrue(isHomePageDisplayed,"User is unable to login with Valid Credentials");
 	}
 	@Test
-	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidCredentials()
+	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidCredentials() throws IOException
 	{
-		String userName = "admins";
-		String password = "admins";
+		String userName = ExcelUtility.getStringData(1, 2, "LoginPage");
+		String password = ExcelUtility.getStringData(1, 3, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -34,10 +37,10 @@ public class LoginTest extends Base
 	}
 	
 	@Test
-	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidUsernameAndValidPassword()
+	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidUsernameAndValidPassword() throws IOException
 	{
-		String userName = "admins";
-		String password = "admin";
+		String userName = ExcelUtility.getStringData(1, 4, "LoginPage");
+		String password = ExcelUtility.getStringData(1, 5, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -47,10 +50,10 @@ public class LoginTest extends Base
 	}
 	
 	@Test
-	public void verifyWhetherTheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword()
+	public void verifyWhetherTheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword() throws IOException
 	{
-		String userName = "admin";
-		String password = "admins";
+		String userName = ExcelUtility.getStringData(1, 6, "LoginPage");
+		String password = ExcelUtility.getStringData(1, 7, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);
 		loginpage.enterPasswordOnPasswordField(password);
