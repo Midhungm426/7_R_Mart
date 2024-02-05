@@ -8,10 +8,11 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ManageDeliveryBoyPage;
 import utilities.ExcelUtility;
+import utilities.RandomUtility;
 
 public class ManageDeliveryBoyTest extends Base
 {
-	@Test
+	@Test (description = "Verify whether TheUserIsAbleToSearchDeliveryBoyInDeliveryBoyPage")
 	public void verifySearchDeliveryBoyInDeliveryBoyPage() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoy");
@@ -34,17 +35,15 @@ public class ManageDeliveryBoyTest extends Base
 		boolean isdeliveryboysearchresultdisplayed = managedeliveryboypage.isDeliveryBoySearchResultDisplayed();
 		assertTrue(isdeliveryboysearchresultdisplayed,"Search result not found for"+deliveryBoyName);
 	}
-	@Test
+	@Test (description = "Verify whether TheUserIsAbleToAddDeliveryBoyInManageDeliveryBoyPage")
 	public void verifyAddDeliveryBoyInManageDeliveryBoyPage() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoy");
 		String password = ExcelUtility.getStringData(1, 1, "ManageDeliveryBoy");
-		String newDeliveryBoyName= ExcelUtility.getStringData(3, 1, "ManageDeliveryBoy");
-		String deliveryBoyEmail = ExcelUtility.getStringData(4, 1, "ManageDeliveryBoy");
-		String deliveryBoyPhoneNumber = ExcelUtility.getIntegerData(5, 1, "ManageDeliveryBoy");
-		String deliveryBoyAddress = ExcelUtility.getStringData(6, 1, "ManageDeliveryBoy");
-		String deliveryBoyUserName = ExcelUtility.getStringData(7, 1, "ManageDeliveryBoy");
-		String deliveryBoyPassword = ExcelUtility.getStringData(8, 1, "ManageDeliveryBoy");
+	
+		String newDeliveryBoyName = RandomUtility.getRandomFirstName();
+		String deliveryBoyPhoneNumber = RandomUtility.getRandomPhoneNumber();
+		String deliveryBoyAddress = RandomUtility.getRandomFullAddress();
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userName);
@@ -56,12 +55,11 @@ public class ManageDeliveryBoyTest extends Base
 		managedeliveryboypage.clickOnMoreInfo();
 		managedeliveryboypage.clickOnAddDeliveryBoyButton();
 		managedeliveryboypage.enterDeliveryBoyNameOnEnterTheNameField(newDeliveryBoyName);
-		managedeliveryboypage.enterDeliveryBoyEmailOnEnterEmailField(deliveryBoyEmail);
+		managedeliveryboypage.enterDeliveryBoyEmailOnEnterEmailField(newDeliveryBoyName+"@gmail.com");
 		managedeliveryboypage.enterPhoneNumberOnEnterPhoneNumberField(deliveryBoyPhoneNumber);
 		managedeliveryboypage.enterAddressOnEnterAddressField(deliveryBoyAddress);
-		managedeliveryboypage.enterUserNameOnEnterUserNameField(deliveryBoyUserName);
-		managedeliveryboypage.enterPasswordOnEnterPasswordField(deliveryBoyPassword);
-		
+		managedeliveryboypage.enterUserNameOnEnterUserNameField(newDeliveryBoyName+"@123");
+		managedeliveryboypage.enterPasswordOnEnterPasswordField(newDeliveryBoyName+"@123");	
 		managedeliveryboypage.clickOnSaveButton();
 		boolean isNewDeliveryBoyCreatedSuccessfullyAlertDisplayed = managedeliveryboypage.isNewDeliveryBoyCreatedSuccessfullyAlertDisplayed();
 		assertTrue(isNewDeliveryBoyCreatedSuccessfullyAlertDisplayed,"New delivery boy not created successfully");

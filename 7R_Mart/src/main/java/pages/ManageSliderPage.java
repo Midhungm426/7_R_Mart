@@ -35,14 +35,7 @@ public class ManageSliderPage
 	{
 		newButton.click();
 	}
-	public void clickOnChooseFileButton()
-	{
-		PageUtility pageutility = new PageUtility();
-		pageutility.javaScriptClick(driver, chooseFileButton);
-		
-		WaitUtility waitutility = new WaitUtility();
-		waitutility.ExplicitWaitForAnElementToBeClickable(driver, chooseFileButton);
-	}
+
 	public void useSendKeysForFileUpload()
 	{
 		PageUtility pageutility = new PageUtility();

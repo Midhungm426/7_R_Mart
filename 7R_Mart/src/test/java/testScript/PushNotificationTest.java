@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class PushNotificationTest extends Base 
 {
-	@Test
+	@Test (description ="verify whether PushNotificationMessageIsSendSuccessfully")
 	public void verifyPushNotificationMessageIsSendSuccessfully() throws IOException 
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"PushNotificationPage" );

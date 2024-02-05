@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,7 +54,6 @@ public class ManageDeliveryBoyPage
 		deliveryBoyFilterSearchButton.click();
 	}
 	public boolean isDeliveryBoySearchResultDisplayed()
-	
 	{
 		return deliveryBoySearchResult.isDisplayed();
 	}
@@ -87,15 +85,13 @@ public class ManageDeliveryBoyPage
 	{
 		deliveryBoyPasswordField.sendKeys(deliveryBoyPassword);
 	}
-	public void clickOnSaveButton()
+		public void clickOnSaveButton()
 	{
-		PageUtility pageutility = new PageUtility();
-		pageutility.javaScriptClick(driver, saveButton);
-		
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.ExplicitWaitForAnElementToBeClickable(driver, saveButton);
 		
-		//saveButton.click();
+		PageUtility pageutility = new PageUtility();
+		pageutility.javaScriptClick(driver, saveButton);
 	}
 	public boolean isNewDeliveryBoyCreatedSuccessfullyAlertDisplayed()
 	{

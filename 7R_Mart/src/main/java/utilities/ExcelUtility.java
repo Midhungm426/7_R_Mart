@@ -24,28 +24,6 @@ public class ExcelUtility
 		Cell c= r.getCell(j);
 		return c.getStringCellValue();
 	}
-		/*String file_path = GeneralUtility.TESTDATAFILE;
-		 try
-		{
-			f = new FileInputStream(file_path);
-		} catch (FileNotFoundException e) 
-		{
-
-			e.printStackTrace();
-		}
-		try 
-		{
-			wb = new XSSFWorkbook(f);
-		} catch (IOException e) 
-		{
-
-			e.printStackTrace();
-		}
-		sh = wb.getSheet(sheet);
-		Row r = sh.getRow(i);
-		Cell c = r.getCell(j);
-		return c.getStringCellValue();
-	}*/
 	
 	public static String getIntegerData(int i, int j, String sheet) throws IOException
 	{

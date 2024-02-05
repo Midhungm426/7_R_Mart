@@ -10,11 +10,10 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ManageSliderPage;
 import utilities.ExcelUtility;
-import utilities.FileUploadUtility;
 
 public class ManageSliderTest extends Base
 {	
-	@Test
+	@Test (description = "Verify whether theUserIsAbleToAddANewMobileSlider")
 	public void verifyTheUserIsAbleToAddANewMobileSlider() throws AWTException, IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"ManageSlider" );

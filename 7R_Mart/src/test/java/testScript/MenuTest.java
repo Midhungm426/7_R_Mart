@@ -12,7 +12,7 @@ import pages.LoginPage;
 
 public class MenuTest extends Base
 {
-	@Test
+	@Test (description = "Verify whether TheSelectedMenuTilesAreDisplayed")
 	public void verifyWhetherTheSelectedMenuTilesAreDisplayed() throws IOException
 	
 	{
