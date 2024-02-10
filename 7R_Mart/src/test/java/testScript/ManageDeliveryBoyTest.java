@@ -35,6 +35,7 @@ public class ManageDeliveryBoyTest extends Base
 		boolean isdeliveryboysearchresultdisplayed = managedeliveryboypage.isDeliveryBoySearchResultDisplayed();
 		assertTrue(isdeliveryboysearchresultdisplayed,"Search result not found for"+deliveryBoyName);
 	}
+	
 	@Test (description = "Verify whether TheUserIsAbleToAddDeliveryBoyInManageDeliveryBoyPage")
 	public void verifyAddDeliveryBoyInManageDeliveryBoyPage() throws IOException
 	{

@@ -2,11 +2,9 @@ package pages;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class MenuPage 
@@ -17,9 +15,9 @@ public class MenuPage
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath = "//div[contains(@class,'small')]//child::div[@class='inner']") List<WebElement> menuList;
-	@FindBy(xpath = "//a[@class='small-box-footer']") List<WebElement> menuLink;
-	@FindBy(xpath = "//a[@class=\"btn btn-rounded btn-warning\"]") WebElement resetButton;
+	@FindBy(xpath = "//div[contains(@class,'small')]//child::div[@class='inner']")private List<WebElement> menuList;
+	@FindBy(xpath = "//a[@class='small-box-footer']")private List<WebElement> menuLink;
+	@FindBy(xpath = "//a[@class=\"btn btn-rounded btn-warning\"]")private WebElement resetButton;
 	
 	public void clickOnMenu(String selectedMenu)
 	{

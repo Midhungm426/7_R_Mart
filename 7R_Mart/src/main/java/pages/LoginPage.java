@@ -13,11 +13,11 @@ public class LoginPage
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath="//input[@name='username']") WebElement userNameField;
-	@FindBy(xpath="//input[@name='password']") WebElement passwordField;
-	@FindBy(xpath="//button[@type='submit']") WebElement signInButton;
-	@FindBy(xpath="//li[@class='breadcrumb-item']") WebElement home;
-	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") WebElement alertPopup;
+	@FindBy(xpath="//input[@name='username']")private WebElement userNameField;
+	@FindBy(xpath="//input[@name='password']")private WebElement passwordField;
+	@FindBy(xpath="//button[@type='submit']")private WebElement signInButton;
+	@FindBy(xpath="//li[@class='breadcrumb-item']")private WebElement home;
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")private WebElement alertPopup;
 	
 	public void enterUserNameOnUserNameField(String userName)
 	{

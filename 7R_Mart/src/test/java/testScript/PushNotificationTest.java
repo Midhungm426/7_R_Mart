@@ -5,14 +5,14 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
-
+import retry.Retry;
 import pages.LoginPage;
 import pages.PushNotificationPage;
 import utilities.ExcelUtility;
 
 public class PushNotificationTest extends Base 
 {
-	@Test (description ="verify whether PushNotificationMessageIsSendSuccessfully")
+	@Test (retryAnalyzer = Retry.class,  description ="verify whether PushNotificationMessageIsSendSuccessfully")
 	public void verifyPushNotificationMessageIsSendSuccessfully() throws IOException 
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"PushNotificationPage" );

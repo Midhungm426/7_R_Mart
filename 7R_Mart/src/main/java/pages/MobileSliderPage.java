@@ -14,9 +14,9 @@ public class MobileSliderPage
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//p[text()='Mobile Slider']//parent::a") WebElement mobileSliderOption;
-	@FindBy(xpath = "(//span[text()='Active'])[1]") WebElement activeStatusButton;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']") WebElement alertMessage;
+	@FindBy(xpath = "//p[text()='Mobile Slider']//parent::a")private WebElement mobileSliderOption;
+	@FindBy(xpath = "(//span[text()='Active'])[1]")private WebElement activeStatusButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")private WebElement alertMessage;
 	
 	public void clickOnMobileSliderOption()
 	{

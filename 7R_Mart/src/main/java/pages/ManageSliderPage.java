@@ -10,7 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.FileUploadUtility;
 import utilities.GeneralUtility;
 import utilities.PageUtility;
-import utilities.WaitUtility;
 
 public class ManageSliderPage 
 {
@@ -20,12 +19,12 @@ public class ManageSliderPage
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath = "//p[text()='Manage Slider']//parent::a") WebElement manageSlider;
-	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newButton;
-	@FindBy(xpath="//input[@id='main_img']") WebElement chooseFileButton;
-	@FindBy(xpath="//input[@id='link']") WebElement linkTextField;
-	@FindBy(xpath="//button[text()='Save']") WebElement saveButton;
-	@FindBy(xpath="//h5[text()=' Alert!']//parent::div") WebElement alertText;
+	@FindBy(xpath = "//p[text()='Manage Slider']//parent::a")private WebElement manageSlider;
+	@FindBy(xpath="//a[@onclick='click_button(1)']")private WebElement newButton;
+	@FindBy(xpath="//input[@id='main_img']")private WebElement chooseFileButton;
+	@FindBy(xpath="//input[@id='link']")private WebElement linkTextField;
+	@FindBy(xpath="//button[text()='Save']")private WebElement saveButton;
+	@FindBy(xpath="//h5[text()=' Alert!']//parent::div")private WebElement alertText;
 	
 	public void clickOnManageSliderOption()
 	{

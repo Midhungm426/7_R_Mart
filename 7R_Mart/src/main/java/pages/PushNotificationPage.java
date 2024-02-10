@@ -13,11 +13,11 @@ public class PushNotificationPage
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath = "//p[text()='Push Notifications']//parent::a") WebElement pushNotificationOption;
-	@FindBy(xpath = "//input[@id='title']") WebElement titleField;
-	@FindBy(xpath="//input[@id='description']") WebElement descriptionField;
-	@FindBy(xpath="//button[contains(@class,'btn btn-block-sm btn-info')]") WebElement sendButton;
-	@FindBy(xpath="//i[contains(@class,'icon fas fa-check')]//parent::h5") WebElement alertMessage;
+	@FindBy(xpath = "//p[text()='Push Notifications']//parent::a")private WebElement pushNotificationOption;
+	@FindBy(xpath = "//input[@id='title']")private WebElement titleField;
+	@FindBy(xpath="//input[@id='description']")private WebElement descriptionField;
+	@FindBy(xpath="//button[contains(@class,'btn btn-block-sm btn-info')]")private WebElement sendButton;
+	@FindBy(xpath="//i[contains(@class,'icon fas fa-check')]//parent::h5")private WebElement alertMessage;
 	
 	
 	public void clickOnPushNotificationOption()

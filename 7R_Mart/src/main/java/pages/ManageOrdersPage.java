@@ -17,19 +17,19 @@ public class ManageOrdersPage
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-order']//parent::li") WebElement manageOrdersOption;
-	@FindBy(xpath = "(//i[@class='fas fa-trash-alt'])[1]") WebElement deleteButton;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']") WebElement alertMessage;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-order']//parent::li")private WebElement manageOrdersOption;
+	@FindBy(xpath = "(//i[@class='fas fa-trash-alt'])[1]")private WebElement deleteButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")private WebElement alertMessage;
 	
-	@FindBy(xpath = "(//a[text()='Assign Delivery Boy'])[1]") WebElement assignDeliveryBoy;
-	@FindBy(xpath = "(//select[@id='delivery_boy_id'])[1]") WebElement selectDeliveryBoy;
-	@FindBy(xpath = "(//button[@name='assign_del'])[1]") WebElement updateButton;
+	@FindBy(xpath = "(//a[text()='Assign Delivery Boy'])[1]")private WebElement assignDeliveryBoy;
+	@FindBy(xpath = "(//select[@id='delivery_boy_id'])[1]")private WebElement selectDeliveryBoy;
+	@FindBy(xpath = "(//button[@name='assign_del'])[1]")private WebElement updateButton;
 	
-	@FindBy(xpath = "(//a[@class=\'btn btn-primary btn-sm\'])[1]") WebElement changeDeliveryDate;
-	@FindBy(xpath = "(//input[@name='del_up_date'])[1]") WebElement deliveryDateField;
-	@FindBy(xpath = "(//input[@id='basicExample'])[1]") WebElement timeFromField;
-	@FindBy(xpath = "(//input[@id='basicExample1'])[1]") WebElement timeToField;
-	@FindBy(xpath = "(//button[@name='Update_st'])[2]") WebElement updateButtn;
+	@FindBy(xpath = "(//a[@class=\'btn btn-primary btn-sm\'])[1]")private WebElement changeDeliveryDate;
+	@FindBy(xpath = "(//input[@name='del_up_date'])[1]")private WebElement deliveryDateField;
+	@FindBy(xpath = "(//input[@id='basicExample'])[1]")private WebElement timeFromField;
+	@FindBy(xpath = "(//input[@id='basicExample1'])[1]")private WebElement timeToField;
+	@FindBy(xpath = "(//button[@name='Update_st'])[2]")private WebElement updateButtn;
 	
 	public void clickOnManageOrdersOption()
 	{

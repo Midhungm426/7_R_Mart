@@ -24,6 +24,7 @@ public class LoginTest extends Base
 		boolean isHomePageDisplayed = loginpage.isHomeDisplayed();
 		assertTrue(isHomePageDisplayed,"User is unable to login with Valid Credentials");
 	}
+	
 	@Test (description = "Verify whether theUserIsNotAbleToLoginWithInvalidCredentials")
 	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidCredentials() throws IOException
 	{
@@ -38,7 +39,6 @@ public class LoginTest extends Base
 	}
 	
 	@Test (description = "Verify whether TheUserIsNotAbleToLoginWithInvalidUsernameAndValidPassword")
-	
 	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidUsernameAndValidPassword() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(1, 4, "LoginPage");
@@ -61,6 +61,7 @@ public class LoginTest extends Base
 		boolean isAlertMessageDisplayed = loginpage.isAlertPopupDisplayed();
 		assertTrue(isAlertMessageDisplayed,"The user is able to login with a valid username and a invalid password");
 	}
+	
 	@DataProvider(name = "LoginProvider")
 	public Object[][] getDataFromTestData() throws IOException 
 	{
