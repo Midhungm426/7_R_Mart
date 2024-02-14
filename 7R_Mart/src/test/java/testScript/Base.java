@@ -20,7 +20,7 @@ public class Base
 {
 	public WebDriver driver;
 		
-	@BeforeMethod
+	@BeforeMethod (alwaysRun=true)
 	@Parameters("browser")
 	
 	public void initializeBrowser(String browser) throws Exception
@@ -48,7 +48,7 @@ public class Base
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 	}
 	
-	@AfterMethod
+	@AfterMethod (alwaysRun=true)
 	
 	public void browserQuit(ITestResult iTestResult) throws IOException
 	{

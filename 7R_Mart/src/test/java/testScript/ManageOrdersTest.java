@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class ManageOrdersTest extends Base 
 {
-	@Test (description = "Verify whether TheUserIsAbleToDeleteAnOrder")
+	@Test (description = "Verify whether TheUserIsAbleToDeleteAnOrder",  priority =1)
 	public void verifyThatTheUserIsAbleToDeleteAnOrder() throws IOException 
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"ManageOrders" );
@@ -31,7 +31,7 @@ public class ManageOrdersTest extends Base
 		assertTrue(isorderdeletedsuccessfully, "Order not deleted");
 	}
 	
-	@Test (description = "Verify whether TheuserIsAbleToAssignADeliveryBoy")
+	@Test (description = "Verify whether TheuserIsAbleToAssignADeliveryBoy",  priority =3)
 	public void verifyThatTheuserIsAbleToAssignADeliveryBoy() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"ManageOrders" );
@@ -51,7 +51,7 @@ public class ManageOrdersTest extends Base
 		assertTrue(isDeliveryBoyAssignedSuccessfully, "Delivery Boy not assigned successfully");
 	}
 	
-	@Test (description = "Verify whether TheuserIsAbleToChangeTheDeliveryDate")
+	@Test (description = "Verify whether TheuserIsAbleToChangeTheDeliveryDate",  priority =2)
 	public void verifyThatTheuserIsAbleToChangeTheDeliveryDate() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"ManageOrders" );

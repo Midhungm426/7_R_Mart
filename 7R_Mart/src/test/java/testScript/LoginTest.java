@@ -8,11 +8,12 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base
 {
-	@Test (description = "Verify whether theUserIsAbleToLoginWithValidCredentials")
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether theUserIsAbleToLoginWithValidCredentials", groups = {"regression"})
 	public void verifyWhetherTheUserIsAbleToLoginWithValidCredentials() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(1, 0,"LoginPage" );
@@ -25,7 +26,7 @@ public class LoginTest extends Base
 		assertTrue(isHomePageDisplayed,"User is unable to login with Valid Credentials");
 	}
 	
-	@Test (description = "Verify whether theUserIsNotAbleToLoginWithInvalidCredentials")
+	@Test (description = "Verify whether theUserIsNotAbleToLoginWithInvalidCredentials", groups = {"smoke"})
 	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidCredentials() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(1, 2, "LoginPage");
