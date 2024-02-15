@@ -7,12 +7,13 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import pages.MenuPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 import pages.LoginPage;
 
 public class MenuTest extends Base
 {
-	@Test (description = "Verify whether TheSelectedMenuTilesAreDisplayed")
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheSelectedMenuTilesAreDisplayed")
 	public void verifyWhetherTheSelectedMenuTilesAreDisplayed() throws IOException
 	
 	{

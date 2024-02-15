@@ -26,7 +26,7 @@ public class LoginTest extends Base
 		assertTrue(isHomePageDisplayed,"User is unable to login with Valid Credentials");
 	}
 	
-	@Test (description = "Verify whether theUserIsNotAbleToLoginWithInvalidCredentials", groups = {"smoke"})
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether theUserIsNotAbleToLoginWithInvalidCredentials", groups = {"smoke"})
 	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidCredentials() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(1, 2, "LoginPage");
@@ -39,7 +39,7 @@ public class LoginTest extends Base
 		assertTrue(isAlertMessageDisplayed,"The user is able to login with invalid credentials");
 	}
 	
-	@Test (description = "Verify whether TheUserIsNotAbleToLoginWithInvalidUsernameAndValidPassword")
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsNotAbleToLoginWithInvalidUsernameAndValidPassword")
 	public void verifyWhetherTheUserIsNotAbleToLoginWithInvalidUsernameAndValidPassword() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(1, 4, "LoginPage");
@@ -52,7 +52,7 @@ public class LoginTest extends Base
 		assertTrue(isAlertMessageDisplayed,"The user is able to login with invalid username and a valid password");
 	}
 	
-	@Test (description = "Verify whether TheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword")
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword")
 	public void verifyWhetherTheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword(String userName, String password) throws IOException
 	{
 		LoginPage loginpage = new LoginPage(driver);

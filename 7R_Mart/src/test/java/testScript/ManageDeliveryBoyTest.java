@@ -7,12 +7,13 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManageDeliveryBoyPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 import utilities.RandomUtility;
 
 public class ManageDeliveryBoyTest extends Base
 {
-	@Test (description = "Verify whether TheUserIsAbleToSearchDeliveryBoyInDeliveryBoyPage", priority =1)
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsAbleToSearchDeliveryBoyInDeliveryBoyPage", priority =1)
 	public void verifySearchDeliveryBoyInDeliveryBoyPage() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoy");
@@ -36,7 +37,7 @@ public class ManageDeliveryBoyTest extends Base
 		assertTrue(isdeliveryboysearchresultdisplayed,"Search result not found for"+deliveryBoyName);
 	}
 	
-	@Test (description = "Verify whether TheUserIsAbleToAddDeliveryBoyInManageDeliveryBoyPage", priority =2)
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsAbleToAddDeliveryBoyInManageDeliveryBoyPage", priority =2)
 	public void verifyAddDeliveryBoyInManageDeliveryBoyPage() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1, "ManageDeliveryBoy");

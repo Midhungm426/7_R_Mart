@@ -8,11 +8,12 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.MobileSliderPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class MobileSliderTest extends Base
 {
-	@Test (description = "Verify whether TheUserIsAbleToChangeTheStatusOfMobileSlider")
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsAbleToChangeTheStatusOfMobileSlider")
 	public void verifyThatTheUserIsAbleToChangeTheStatusOfMobileSlider() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1, "MobileSlider");

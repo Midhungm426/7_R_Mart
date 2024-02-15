@@ -8,11 +8,12 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManageOrdersPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class ManageOrdersTest extends Base 
 {
-	@Test (description = "Verify whether TheUserIsAbleToDeleteAnOrder",  priority =1)
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsAbleToDeleteAnOrder",  priority =1)
 	public void verifyThatTheUserIsAbleToDeleteAnOrder() throws IOException 
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"ManageOrders" );
@@ -31,7 +32,7 @@ public class ManageOrdersTest extends Base
 		assertTrue(isorderdeletedsuccessfully, "Order not deleted");
 	}
 	
-	@Test (description = "Verify whether TheuserIsAbleToAssignADeliveryBoy",  priority =3)
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheuserIsAbleToAssignADeliveryBoy",  priority =3)
 	public void verifyThatTheuserIsAbleToAssignADeliveryBoy() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"ManageOrders" );
@@ -51,7 +52,7 @@ public class ManageOrdersTest extends Base
 		assertTrue(isDeliveryBoyAssignedSuccessfully, "Delivery Boy not assigned successfully");
 	}
 	
-	@Test (description = "Verify whether TheuserIsAbleToChangeTheDeliveryDate",  priority =2)
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheuserIsAbleToChangeTheDeliveryDate",  priority =2)
 	public void verifyThatTheuserIsAbleToChangeTheDeliveryDate() throws IOException
 	{
 		String userName = ExcelUtility.getStringData(0, 1,"ManageOrders" );
