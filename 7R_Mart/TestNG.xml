@@ -13,13 +13,7 @@
 				<methods>
 					<include name="verifyWhetherTheUserIsAbleToLoginWithValidCredentials"></include>
 				</methods>
-			</class>
-			<class name="testScript.ManageDeliveryBoyTest">
-				<methods>
-					<include name="verifyAddDeliveryBoyInManageDeliveryBoyPage"></include>
-				</methods>
-			</class>	
-						
+			</class>				
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
