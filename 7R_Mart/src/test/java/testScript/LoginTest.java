@@ -52,7 +52,7 @@ public class LoginTest extends Base
 		assertTrue(isAlertMessageDisplayed,"The user is able to login with invalid username and a valid password");
 	}
 	
-	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword")
+	@Test (retryAnalyzer = Retry.class, description = "Verify whether TheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword", dataProvider= "LoginProvider")
 	public void verifyWhetherTheUserIsNotAbleToLoginWithValidUsernameAndInvalidPassword(String userName, String password) throws IOException
 	{
 		LoginPage loginpage = new LoginPage(driver);

@@ -9,11 +9,15 @@
 	</parameter>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="testScript.LoginTest">
-				<methods>
-					<include name="verifyWhetherTheUserIsAbleToLoginWithValidCredentials"></include>
-				</methods>
-			</class>				
+			<class name="testScript.LoginTest"></class>	
+			<class name="testScript.ManageDeliveryBoyTest"></class>	
+			<class name="testScript.ManageOrdersTest"></class>	
+			<class name="testScript.ManageSliderTest"></class>	
+			<class name="testScript.MenuTest"></class>	
+			<class name="testScript.MobileSliderTest"></class>	
+			<class name="testScript.PushNotificationTest"></class>	
+			
+						
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
